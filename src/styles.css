@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Gloock&family=Lobster&family=Mukta:wght@500;800&family=Poppins:ital,wght@1,300&family=Rubik+Spray+Paint&family=Rubik+Storm&family=Rubik+Vinyl&family=Shadows+Into+Light&family=Source+Code+Pro:ital,wght@1,700&family=Tilt+Prism&display=swap');
+body{
+    /* background-color: rgb(28, 62, 51); */
+    background-image: url(./assets/wp6602995.webp);
+    background-size: cover;
+}
+h1{
+    color: blue;
+}
+header{
+    height: 70px;
+    background-color: rgb(44, 69, 60);
+}
+
+footer{
+    width: 100%;
+    background-color: rgb(48, 61, 57);
+    bottom: 0;
+    position: fixed;
+}

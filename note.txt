@@ -1,0 +1,50 @@
+Angular
+
+npm-node package manager/module
+install--
+        npm i -g@angular/cli@latest                      to check whether installed or not- npm v
+
+project creation
+         ng new projectname
+
+running command
+    ng serve --open        /ng s --o    
+
+    angular tchnologies
+-html
+-css
+-typescript :strictly typescript
+
+number:any
+
+transpiling-browser will convert typescript to javascript automatically for output
+
+npm i -node package module install
+
+-root module
+   -root component
+     -we can create sub components inside the module
+ -sub modules
+     -components
+
+module -a single ts file
+components-ts,html,css combined
+ -selector-used  to display components
+
+
+ create new components
+      -ng generate component component_name    /ng g c first
+
+
+working cycle of angular components
+constructor-->ngOnInit-->other methods
+
+data binding in angular
+--------------------
+1.one way binding
+   .ts to html-(component to view data sharing)
+       ..string interpolation {{}}
+       ..prperty binding       [property_name]="data"
+    .html to ts-(view to component)  
+       ..Event binding   (eventname)="method()"
+       ..$ event binding  (eventname)="method($event)"
