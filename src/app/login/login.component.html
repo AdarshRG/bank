@@ -3,10 +3,10 @@
 <div class="container w-25 p-3 text-center g" style="margin-top: 150px;background-color: rgba(109, 99, 87, 0.523);">
     <h1 class="text-center text white" style="font-family: 'Lora', serif;" ><b>LOGIN</b></h1>
     <form action="">
-        <input (change)="acnoChange($event)" id="u1" name="uname" class="form-control" type="text" [placeholder]="data1"><br>
-        <input (change)="passChange($event)" id="p1" name="password" class="form-control" type="password" placeholder="Password"><br>
+        <input #acno id="u1" name="uname" class="form-control" type="text" [placeholder]="data1"><br>
+        <input #psw id="p1" name="password" class="form-control" type="password" placeholder="Password"><br>
 
        
-        <button (click)="login()" type="submit" class="btn btn-primary">Submit</button>
+        <button (click)="login(acno,psw)" type="submit" class="btn btn-primary">Submit</button>
       </form>
 </div>

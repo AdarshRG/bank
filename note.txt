@@ -48,3 +48,8 @@ data binding in angular
     .html to ts-(view to component)  
        ..Event binding   (eventname)="method()"
        ..$ event binding  (eventname)="method($event)"
+       ..event binding with template rendering variable
+ 2.Two way binding      
+    .ngModel [(ngModel)]="variable"  
+      -FormsModule-Module used to apply ngModel
+      
