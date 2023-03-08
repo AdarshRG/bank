@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent {
     1002:{username:"akhil",acno:1002,password:"abc123",balance:0},
     1003:{username:"ddz",acno:1003,password:"abc123",balance:0},
   }
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit():void{
 
@@ -31,9 +32,12 @@ export class LoginComponent {
     //to avoid this.
     if(acnum in userDetails){
       if(psw==userDetails[acnum]["password"]){
+          //acnum not in quotes because its not variable
         alert("login sucess")
+        //redirection to other page
+     this.router.navigateByUrl("dashboard")
       }
-      //acnum not in quotes because its not variable
+    
     else{
       alert("incorrect password")
     }

@@ -53,3 +53,20 @@ data binding in angular
     .ngModel [(ngModel)]="variable"  
       -FormsModule-Module used to apply ngModel
       
+      
+Redirection in Angular      
+   method- navigateByUrl(path)
+   class - router
+   module- AppRoutingModule
+
+   folder-file-class-methods
+   package module
+
+Dependency Injection
+  -to use a method of class in another class(alternate of inheritance)   
+ in constructer
+
+  accessSpecifier reference
+     access specifier -private/public
+        private: can use the injecting class only in the class
+        public: can use the injecting class in other classes of that file
