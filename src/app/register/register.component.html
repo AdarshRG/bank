@@ -1,1 +1,13 @@
-<p>register works!</p>
+
+
+<div class="container w-25 p-3 text-center g" style="margin-top: 150px;background-color: rgba(109, 99, 87, 0.523);">
+    <h1 class="text-center text white" style="font-family: 'Lora', serif;" ><b>Create New Account</b></h1>
+    <form action="">
+        <input [(ngModel)]="acno"id="u1" name="acnum" class="form-control" type="text" placeholder="account number"><br>
+        <input [(ngModel)]="uname" id="p1" name="uname" class="form-control" type="password" placeholder="username"><br>
+        <input [(ngModel)]="psw" id="z1" name="password" class="form-control" type="password" placeholder="enter pasword"><br>
+
+       
+        <button (click)="register()" type="submit" class="btn btn-primary">Sign up</button>
+      </form>
+</div>

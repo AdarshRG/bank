@@ -70,3 +70,32 @@ Dependency Injection
      access specifier -private/public
         private: can use the injecting class only in the class
         public: can use the injecting class in other classes of that file
+
+
+Angular services    
+   -It is a file in angular,all file can ACCESS the content of service file
+  -create     ng g s filename     
+
+  Angular Dierectives
+  -------------------
+
+  used to manipulate dom
+  1-component dierective
+  2-Structural Dierectives
+       -*ngFor
+  3-
+
+
+For validation in Angular(input error etc)
+--------------------------
+
+1.template driven form
+2.model driven form(always used)
+
+Model driven form
+  -ReactiveFormsModule  -module used to build model form
+  -FormBuiilder         -class used to build model form
+
+  -a model contain      -form group
+                        -array
+                        -controller
