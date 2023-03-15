@@ -82,7 +82,8 @@ Angular services
   used to manipulate dom
   1-component dierective
   2-Structural Dierectives
-       -*ngFor
+       -*ngFor-for creating loop in html
+       -*ngIf
   3-
 
 

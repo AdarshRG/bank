@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -9,24 +9,22 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  acno: any;
-  psw: any;
-  uname: any;
 
   constructor(private ds: DataService,private router:Router,private fb:FormBuilder) {}
   //model for register form
 registerForm=this.fb.group({
-  acno:[''],
-  psw:[''],
-  uname:['']
+  acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
+  psw:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]],
+  uname:['',[Validators.required,Validators.pattern('[a-zA-Z]+')]]
 })
 
-  ngOnInit(): void {}
+  // ngOnInit(): void {}
 
   register() {
-    var acno = this.acno;
-    var psw = this.psw;
-    var uname = this.uname;
+    var acno = this.registerForm.value.acno;
+    var psw = this.registerForm.value.psw;
+    var uname = this.registerForm.value.uname;
+    if(this.registerForm.valid){
     const result = this.ds.register(acno,uname,psw);
     if (result) {
       alert('registered');
@@ -36,4 +34,8 @@ registerForm=this.fb.group({
       alert('user already present');
     }
   }
+  else{
+    alert('Invalid Form')
+  }
+}
 }
