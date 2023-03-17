@@ -1,25 +1,50 @@
 
 <h3 class="text-white mt-3 p-2 ms-2" >Welcome {{user}}</h3>
+<div class="text-end me-3 ">
+    <button (click)="logout()" class="btn btn-warning">Logout</button>
+</div>
 
 <div class="row">
     <div class="col-lg-6 p-5 text-center" >
-        <form style="background-color: rgba(0, 0, 0, 0.274);border-radius: 20px;"action="">
+        <form  [formGroup]="depositForm"  style="background-color: rgba(0, 0, 0, 0.274);border-radius: 20px;"action="">
             <h2  class="text-white ">Deposit</h2>
-            <input [(ngModel)]="acno" id="as1" name="acno" class="form-control" type="text" placeholder="Account number"><br>
-            <input [(ngModel)]="psw"  id="us1" name="password" class="form-control" type="password" placeholder="Password"><br>
-            <input [(ngModel)]="amnt"  id="ps1" name="amnt" class="form-control" type="text" placeholder="Amount"><br>
-    
+            <input  formControlName="acno1"id="as1" name="acno" class="form-control" type="text" placeholder="Account number"><br>
+            <div *ngIf="this.depositForm.get('acno1')?.errors && this.depositForm.get('acno1')?.touched"
+                class="text-start ms-2">
+                <p class="text-danger">Includes number  only</p>
+            </div>
+            <input  formControlName="psw1"  id="us1" name="password" class="form-control" type="password" placeholder="Password"><br>
+            <div *ngIf="this.depositForm.get('psw1')?.errors && this.depositForm.get('psw1')?.touched"
+            class="text-start ms-2">
+            <p class="text-danger">Includes number and charectors only</p>
+        </div>
+            <input  formControlName="amnt1"  id="ps1" name="amnt" class="form-control" type="text" placeholder="Amount"><br>
+            <div *ngIf="this.depositForm.get('amnt1')?.errors && this.depositForm.get('amnt1')?.touched"
+            class="text-start ms-2">
+            <p class="text-danger">Includes number only</p>
+        </div>
     
             <button (click)="deposit()" type="submit" class="btn btn-primary">Deposit</button>
           </form>
     </div>
     <div class="col-lg-6 p-5 text-center" >
-        <form style="background-color: rgba(0, 0, 0, 0.274);border-radius: 20px;"action="">
+        <form  [formGroup]="withdrawForm"  style="background-color: rgba(0, 0, 0, 0.274);border-radius: 20px;"action="">
             <h2 class="text-white">Withdraw</h2>
-            <input [(ngModel)]="acno1" id="aw1" name="acno1" class="form-control" type="text" placeholder="Account number"><br>
-            <input [(ngModel)]="psw1" id="uw1" name="password1" class="form-control" type="password" placeholder="Password"><br>
-            <input [(ngModel)]="amnt1" id="pw1" name="amnt1" class="form-control" type="text" placeholder="Amount"><br>
-    
+            <input formControlName="acno2" id="aw1" name="acno1" class="form-control" type="text" placeholder="Account number"><br>
+            <div *ngIf="this.withdrawForm.get('acno2')?.errors && this.withdrawForm.get('acno2')?.touched"
+            class="text-start ms-2">
+            <p class="text-danger">Includes number only</p>
+        </div>
+            <input formControlName="psw2" id="uw1" name="password1" class="form-control" type="password" placeholder="Password"><br>
+            <div *ngIf="this.withdrawForm.get('psw2')?.errors && this.withdrawForm.get('psw2')?.touched"
+            class="text-start ms-2">
+            <p class="text-danger">Includes number and charectors only</p>
+        </div>
+            <input formControlName="amnt2" id="pw1" name="amnt1" class="form-control" type="text" placeholder="Amount"><br>
+            <div *ngIf="this.withdrawForm.get('amnt2')?.errors && this.withdrawForm.get('amnt2')?.touched"
+            class="text-start ms-2">
+            <p class="text-danger">Includes number only</p>
+        </div>
     
             <button (click)="withdraw()" type="submit" class="btn btn-primary ">Withdraw</button>
           </form>

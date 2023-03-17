@@ -100,3 +100,11 @@ Model driven form
   -a model contain      -form group
                         -array
                         -controller
+
+  local storage in angular               
+  ------------------------
+  c-localStorage.setItem()
+  r-localStorage.getItem()
+  u-localStorage.setItem()
+  d-localStorage.removeItem()
+

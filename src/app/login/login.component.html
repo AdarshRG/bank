@@ -2,10 +2,15 @@
 
 <div class="container w-25 p-3 text-center g" style="margin-top: 150px;background-color: rgba(109, 99, 87, 0.523);">
     <h1 class="text-center text white" style="font-family: 'Lora', serif;" ><b>LOGIN</b></h1>
-    <form action="">
-        <input [(ngModel)]="acno" id="u1" name="uname" class="form-control" type="text" [placeholder]="data1"><br>
-        <input [(ngModel)]="pass" id="p1" name="password" class="form-control" type="password" placeholder="Password"><br>
-
+    <form [formGroup]="loginForm" action="">
+        <input  formControlName="acno" id="u1" name="uname" class="form-control" type="text" [placeholder]="data1"><br>
+        <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched" class="text-start ms-3">
+          <p class="text-danger">Include numbers only</p>
+      </div>
+        <input  formControlName="pass" id="p1" name="password" class="form-control" type="password" placeholder="Password"><br>
+        <div *ngIf="this.loginForm.get('pass')?.errors && this.loginForm.get('pass')?.touched" class="text-start ms-3">
+          <p class="text-danger">Include numbers only</p>
+      </div>
        
         <button (click)="login()" type="submit" class="btn btn-primary">Submit</button>
         <p class="text-white mt-2">Dont have account? <a style="text-decoration: none; color: brown; " href="register">Create Account</a> </p>
